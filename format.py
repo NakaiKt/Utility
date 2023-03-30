@@ -5,7 +5,7 @@ import logging
 class HelpFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
     pass
 
-def setting_logging_conofig():
+def setting_logging_config():
     """loggingの設定を行う関数
     """
     logging.basicConfig(
