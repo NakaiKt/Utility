@@ -19,7 +19,7 @@ def load_image_PIL(image_path: str) -> Image:
     Returns:
         PIL.Image: 画像
     """
-    image = Image.open(image_path)
+    image = Image.open(image_path).convert("RGB")
     return image
 
 def load_image_cv2(image_path: str) -> np.ndarray:

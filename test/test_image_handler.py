@@ -11,12 +11,12 @@ from image_handler import *
 def test_load_image_PIL():
     image = load_image_PIL("./images/lena.jpg")
     print(type(image))
-    assert isinstance(image, PIL.JpegImagePlugin.JpegImageFile)
+    assert isinstance(image, PIL.Image.Image)
 
 
 def test_load_image_PIL_from_directory():
     for image in load_image_PIL_from_directory("./images/"):
-        assert isinstance(image, PIL.JpegImagePlugin.JpegImageFile)
+        assert isinstance(image, PIL.Image.Image)
 
 
 def test_load_image_cv2():
