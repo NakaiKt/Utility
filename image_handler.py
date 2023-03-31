@@ -66,7 +66,7 @@ def resize_image_cv2(image: np.ndarray, size: tuple, interpolation = "INTER_CUBI
         image = cv2.resize(image, size)
     return image
 
-def normalize_image_pytorch(image: np.ndarray):
+def normalize_image_PIL(image: np.ndarray) -> torch.Tensor:
     """pytorchのnormalizeを使って画像を正規化する
 
     Args:
@@ -77,11 +77,21 @@ def normalize_image_pytorch(image: np.ndarray):
     """
     trans = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
-    if isinstance(image, np.ndarray):
-        image = trans(image)
+    image = trans(Image.fromarray(image))[None, :]
+    return image
 
-    elif isinstance(image, Image.Image):
-        image = trans(Image.fromarray(image))[None, :]
+def normalize_image_cv2(image: np.ndarray) -> torch.Tensor:
+    """pytorchのnormalizeを使って画像を正規化する
+
+    Args:
+        image (numpy.ndarray): 画像
+
+    Returns:
+        numpy.ndarray: 正規化後の画像
+    """
+    trans = transforms.Compose([transforms.ToTensor(),
+                                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+    image = trans(image)        
 
     return image
 
