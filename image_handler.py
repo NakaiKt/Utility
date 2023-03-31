@@ -6,6 +6,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
+from torchvision import transforms
 import torch
 
 
@@ -43,7 +44,7 @@ def resize_image_PIL(image: Image, size: tuple) -> Image:
     Returns:
         PIL.Image: リサイズ後の画像
     """
-    image = image.resize(size)
+    image = cv2.resize(np.array(image), size, interpolation=cv2.INTER_CUBIC)
     return image
 
 def resize_image_cv2(image: np.ndarray, size: tuple, interpolation = "INTER_CUBIC") -> np.ndarray:
@@ -63,6 +64,25 @@ def resize_image_cv2(image: np.ndarray, size: tuple, interpolation = "INTER_CUBI
         image = cv2.resize(image, size, interpolation=cv2.INTER_AREA)
     else:
         image = cv2.resize(image, size)
+    return image
+
+def normalize_image_pytorch(image: np.ndarray):
+    """pytorchのnormalizeを使って画像を正規化する
+
+    Args:
+        image (numpy.ndarray): 画像
+
+    Returns:
+        numpy.ndarray: 正規化後の画像
+    """
+    trans = transforms.Compose([transforms.ToTensor(),
+                                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+    if isinstance(image, np.ndarray):
+        image = trans(image)
+
+    elif isinstance(image, Image.Image):
+        image = trans(Image.fromarray(image))[None, :]
+
     return image
 
 

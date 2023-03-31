@@ -32,9 +32,8 @@ def test_load_image_cv2_from_directory():
 def test_resize_image_PIL():
     image = load_image_PIL("./images/lena.jpg")
     image = resize_image_PIL(image, (100, 100))
-    print(type(image))
-    assert isinstance(image, PIL.Image.Image)
-    assert image.size == (100, 100)
+    assert isinstance(image, np.ndarray)
+    assert image.shape == (100, 100, 3)
 
 
 def test_resize_image_cv2():
