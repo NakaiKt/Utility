@@ -1,5 +1,8 @@
-import numpy as np
+import json
 import warnings
+
+import numpy as np
+
 
 def convert_str_to_list(input: str, format="int") -> list:
     """文字列をリストに変換する関数
@@ -51,3 +54,27 @@ def convert_numpy_to_list(input: np.ndarray) -> list:
     """
     return input.tolist()
 
+def convert_dict_to_json(input: dict) -> str:
+    """辞書をjson文字列に変換する関数
+
+    Args:
+        input (dict): 変換する辞書
+
+    Returns:
+        str: 変換後のjson文字列
+    """
+    # inputがdictでない場合，警告を出す
+    if not isinstance(input, dict):
+        warnings.warn(UserWarning("input is not dict"))
+    return json.dumps(input)
+
+def convert_json_to_dict(input: str) -> dict:
+    """json文字列を辞書に変換する関数
+
+    Args:
+        input (str): 変換するjson文字列
+
+    Returns:
+        dict: 変換後の辞書
+    """
+    return json.loads(input)

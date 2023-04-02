@@ -4,10 +4,9 @@ import glob
 
 import cv2
 import numpy as np
-from PIL import Image
-
-from torchvision import transforms
 import torch
+from PIL import Image
+from torchvision import transforms
 
 
 def load_image_PIL(image_path: str) -> Image:
@@ -91,7 +90,7 @@ def normalize_image_cv2(image: np.ndarray) -> torch.Tensor:
     """
     trans = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
-    image = trans(image)        
+    image = trans(image)
 
     return image
 

@@ -1,6 +1,7 @@
 import argparse
 import logging
 
+
 # コマンドライン引数のヘルプにデフォルトを表示するためのフォーマットクラス
 class HelpFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
     pass
@@ -32,4 +33,3 @@ def setting_logging_config(log_name: str, log_save_path = None):
     # ログの設定
     logger.addHandler(sh)
     logger.addHandler(fh)
-    
