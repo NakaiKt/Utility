@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utility 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Utility
+          </a>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-convert">convert module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-csv_handler">csv_handler module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-file_handler">file_handler module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-format">format module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-image_handler">image_handler module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-number_handler">number_handler module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-validation">validation module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Utility</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Utility 1.0.0 documentation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-utility-s-documentation">
+<h1>Welcome to Utility’s documentation!<a class="headerlink" href="#welcome-to-utility-s-documentation" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<span id="document-convert"></span><section id="module-convert">
+<span id="convert-module"></span><h2>convert module<a class="headerlink" href="#module-convert" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="convert.convert_dict_to_json">
+<span class="sig-prename descclassname"><span class="pre">convert.</span></span><span class="sig-name descname"><span class="pre">convert_dict_to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#convert.convert_dict_to_json" title="Permalink to this definition"></a></dt>
+<dd><p>辞書をjson文字列に変換する関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>dict</em>) – 変換する辞書</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>変換後のjson文字列</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="convert.convert_json_to_dict">
+<span class="sig-prename descclassname"><span class="pre">convert.</span></span><span class="sig-name descname"><span class="pre">convert_json_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#convert.convert_json_to_dict" title="Permalink to this definition"></a></dt>
+<dd><p>json文字列を辞書に変換する関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em>) – 変換するjson文字列</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>変換後の辞書</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="convert.convert_list_to_numpy">
+<span class="sig-prename descclassname"><span class="pre">convert.</span></span><span class="sig-name descname"><span class="pre">convert_list_to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#convert.convert_list_to_numpy" title="Permalink to this definition"></a></dt>
+<dd><p>リストをnumpy配列に変換する関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>list</em>) – 変換するリスト</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>変換後のnumpy配列</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="convert.convert_numpy_to_list">
+<span class="sig-prename descclassname"><span class="pre">convert.</span></span><span class="sig-name descname"><span class="pre">convert_numpy_to_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#convert.convert_numpy_to_list" title="Permalink to this definition"></a></dt>
+<dd><p>numpy配列をリストに変換する関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>np.ndarray</em>) – 変換するnumpy配列</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>変換後のリスト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="convert.convert_str_to_list">
+<span class="sig-prename descclassname"><span class="pre">convert.</span></span><span class="sig-name descname"><span class="pre">convert_str_to_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#convert.convert_str_to_list" title="Permalink to this definition"></a></dt>
+<dd><p>文字列をリストに変換する関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>str</em>) – 変換する文字列</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – 変換する型</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>変換後のリスト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-csv_handler"></span><section id="module-csv_handler">
+<span id="csv-handler-module"></span><h2>csv_handler module<a class="headerlink" href="#module-csv_handler" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="csv_handler.get_column">
+<span class="sig-prename descclassname"><span class="pre">csv_handler.</span></span><span class="sig-name descname"><span class="pre">get_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_column</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#csv_handler.get_column" title="Permalink to this definition"></a></dt>
+<dd><p>csvファイルから指定したcolumnを取得</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_column</strong> (<em>str</em>) – keyとなるcolumn名</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – key名</p></li>
+<li><p><strong>csv_file_path</strong> (<em>str</em>) – csvファイルのパス</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>columnの要素リスト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-file_handler"></span><section id="module-file_handler">
+<span id="file-handler-module"></span><h2>file_handler module<a class="headerlink" href="#module-file_handler" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="file_handler.download_file_from_url">
+<span class="sig-prename descclassname"><span class="pre">file_handler.</span></span><span class="sig-name descname"><span class="pre">download_file_from_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span><span class="w">  </span><span class="p"><span class="pre">|</span></span><span class="w">  </span><span class="pre">None</span></span><span class="w">  </span><span class="o"><span class="pre">=</span></span><span class="w">  </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span><span class="w">  </span><span class="p"><span class="pre">|</span></span><span class="w">  </span><span class="pre">None</span></span><span class="w">  </span><span class="o"><span class="pre">=</span></span><span class="w">  </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_handler.download_file_from_url" title="Permalink to this definition"></a></dt>
+<dd><p>URLからファイルをダウンロードする</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – ダウンロードするファイルのURL</p></li>
+<li><p><strong>save_path</strong> (<em>str</em>) – ダウンロードしたファイルを保存するパス</p></li>
+<li><p><strong>basename</strong> (<em>str</em><em>, </em><em>optional</em>) – ダウンロードしたファイルの名前. Defaults to None.</p></li>
+<li><p><strong>extension</strong> (<em>str</em><em>, </em><em>optional</em>) – ダウンロードしたファイルの拡張子. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_handler.get_basename">
+<span class="sig-prename descclassname"><span class="pre">file_handler.</span></span><span class="sig-name descname"><span class="pre">get_basename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_handler.get_basename" title="Permalink to this definition"></a></dt>
+<dd><p>パスからファイルのbasenameを取得する
+basenameには拡張子が含まれない</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – パス</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ファイルのbasename</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_handler.get_extension">
+<span class="sig-prename descclassname"><span class="pre">file_handler.</span></span><span class="sig-name descname"><span class="pre">get_extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_handler.get_extension" title="Permalink to this definition"></a></dt>
+<dd><p>パスからファイルの拡張子を取得する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – パス</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ファイルの拡張子</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_handler.get_filename">
+<span class="sig-prename descclassname"><span class="pre">file_handler.</span></span><span class="sig-name descname"><span class="pre">get_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_handler.get_filename" title="Permalink to this definition"></a></dt>
+<dd><p>パスからファイルの名前を取得する
+ファイル名には拡張子が含まれる</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – パス</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ファイルの名前</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_handler.load_json">
+<span class="sig-prename descclassname"><span class="pre">file_handler.</span></span><span class="sig-name descname"><span class="pre">load_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span><span class="w">  </span><span class="o"><span class="pre">=</span></span><span class="w">  </span><span class="default_value"><span class="pre">'r'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#file_handler.load_json" title="Permalink to this definition"></a></dt>
+<dd><p>JSONファイルを読み込む</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – JSONファイルのパス</p></li>
+<li><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – ファイルを開くモード. Defaults to ‘r’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSONファイルの内容</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-format"></span><section id="module-format">
+<span id="format-module"></span><h2>format module<a class="headerlink" href="#module-format" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="format.HelpFormatter">
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">format.</span></span><span class="sig-name descname"><span class="pre">HelpFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_help_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#format.HelpFormatter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ArgumentDefaultsHelpFormatter</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">RawDescriptionHelpFormatter</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="format.setting_logging_config">
+<span class="sig-prename descclassname"><span class="pre">format.</span></span><span class="sig-name descname"><span class="pre">setting_logging_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_name</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#format.setting_logging_config" title="Permalink to this definition"></a></dt>
+<dd><p>loggingの設定を行う関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log_name</strong> (<em>str</em>) – ログの名前</p></li>
+<li><p><strong>log_save_path</strong> (<em>str</em>) – ログの保存先</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-image_handler"></span><section id="module-image_handler">
+<span id="image-handler-module"></span><h2>image_handler module<a class="headerlink" href="#module-image_handler" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.load_image_PIL">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">load_image_PIL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'D:\\venv_enviroment\\deeplearning\\lib\\site-packages\\PIL\\Image.py'&gt;</span></span></span><a class="headerlink" href="#image_handler.load_image_PIL" title="Permalink to this definition"></a></dt>
+<dd><p>PILを使って画像を読み込む</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_path</strong> (<em>str</em>) – 画像のパス</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>画像</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PIL.Image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.load_image_PIL_from_directory">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">load_image_PIL_from_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./images/'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'D:\\venv_enviroment\\deeplearning\\lib\\site-packages\\PIL\\Image.py'&gt;</span></span></span><a class="headerlink" href="#image_handler.load_image_PIL_from_directory" title="Permalink to this definition"></a></dt>
+<dd><p>ディレクトリ内の画像を順に読み込みyieldで返す</p>
+<dl class="simple">
+<dt>使用例:</dt><dd><p>for image in load_image_PIL_from_directory(directory_path = “./images/”):</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>directory_path</strong> (<em>str</em>) – ディレクトリのパス</p>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>PIL.Image</em> – 画像</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.load_image_cv2">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">load_image_cv2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#image_handler.load_image_cv2" title="Permalink to this definition"></a></dt>
+<dd><p>cv2を使って画像を読み込む</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_path</strong> (<em>str</em>) – 画像のパス</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>画像</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.load_image_cv2_from_directory">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">load_image_cv2_from_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./images/'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#image_handler.load_image_cv2_from_directory" title="Permalink to this definition"></a></dt>
+<dd><p>ディレクトリ内の画像を順に読み込みyieldで返す</p>
+<dl class="simple">
+<dt>使用例:</dt><dd><p>for image in load_image_cv2_from_directory(directory_path = “./images/”):</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>directory_path</strong> (<em>str</em>) – ディレクトリのパス</p>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>numpy.ndarray</em> – 画像</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.normalize_image_PIL">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">normalize_image_PIL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#image_handler.normalize_image_PIL" title="Permalink to this definition"></a></dt>
+<dd><p>pytorchのnormalizeを使って画像を正規化する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>numpy.ndarray</em>) – 画像</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>正規化後の画像</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.normalize_image_cv2">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">normalize_image_cv2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#image_handler.normalize_image_cv2" title="Permalink to this definition"></a></dt>
+<dd><p>pytorchのnormalizeを使って画像を正規化する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>numpy.ndarray</em>) – 画像</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>正規化後の画像</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.resize_image_PIL">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">resize_image_PIL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image:</span> <span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'D:\\venv_enviroment\\deeplearning\\lib\\site-packages\\PIL\\Image.py'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size:</span> <span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'D:\\venv_enviroment\\deeplearning\\lib\\site-packages\\PIL\\Image.py'&gt;</span></span></span><a class="headerlink" href="#image_handler.resize_image_PIL" title="Permalink to this definition"></a></dt>
+<dd><p>PILを使って画像をリサイズする</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>PIL.Image</em>) – 画像</p></li>
+<li><p><strong>size</strong> (<em>tuple</em>) – リサイズ後のサイズ</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>リサイズ後の画像</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PIL.Image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_handler.resize_image_cv2">
+<span class="sig-prename descclassname"><span class="pre">image_handler.</span></span><span class="sig-name descname"><span class="pre">resize_image_cv2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INTER_CUBIC'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#image_handler.resize_image_cv2" title="Permalink to this definition"></a></dt>
+<dd><p>cv2を使って画像をリサイズする</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>numpy.ndarray</em>) – 画像</p></li>
+<li><p><strong>size</strong> (<em>tuple</em>) – リサイズ後のサイズ</p></li>
+<li><p><strong>interpolation</strong> (<em>str</em><em>, </em><em>optional</em>) – リサイズ時の補間方法. Defaults to “INTER_CUBIC”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>リサイズ後の画像</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-number_handler"></span><section id="module-number_handler">
+<span id="number-handler-module"></span><h2>number_handler module<a class="headerlink" href="#module-number_handler" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="number_handler.ceil_number">
+<span class="sig-prename descclassname"><span class="pre">number_handler.</span></span><span class="sig-name descname"><span class="pre">ceil_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digit</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#number_handler.ceil_number" title="Permalink to this definition"></a></dt>
+<dd><p>指定した桁数以上で切り上げる関数
+第二引数で指定した桁数で切り上げる</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>float</em>) – 切り上げる数値</p></li>
+<li><p><strong>digit</strong> (<em>int</em>) – 切り上げる桁数</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>切り上げ後の数値</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="number_handler.floor_number">
+<span class="sig-prename descclassname"><span class="pre">number_handler.</span></span><span class="sig-name descname"><span class="pre">floor_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digit</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#number_handler.floor_number" title="Permalink to this definition"></a></dt>
+<dd><p>指定した桁数以下を切り捨てる関数
+第二引数で指定した桁数で切り捨てる</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>float</em>) – 切り捨てる数値</p></li>
+<li><p><strong>digit</strong> (<em>int</em>) – 切り捨てる桁数</p></li>
+<li><p><strong>Returns</strong> – float: 切り捨て後の数値</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="number_handler.round_number">
+<span class="sig-prename descclassname"><span class="pre">number_handler.</span></span><span class="sig-name descname"><span class="pre">round_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digit</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#number_handler.round_number" title="Permalink to this definition"></a></dt>
+<dd><p>小数点以下を四捨五入する関数
+第二引数で指定した桁数で四捨五入する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>float</em>) – 四捨五入する数値</p></li>
+<li><p><strong>digit</strong> (<em>int</em>) – 四捨五入する桁数</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>四捨五入後の数値</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-validation"></span><section id="module-validation">
+<span id="validation-module"></span><h2>validation module<a class="headerlink" href="#module-validation" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="validation.validate_in_list">
+<span class="sig-prename descclassname"><span class="pre">validation.</span></span><span class="sig-name descname"><span class="pre">validate_in_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#validation.validate_in_list" title="Permalink to this definition"></a></dt>
+<dd><p>入力がリストの中にあるか確認する関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>str</em>) – 確認する文字列</p></li>
+<li><p><strong>list</strong> (<em>list</em>) – 確認するリスト</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>確認結果</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Katsuhiro Nakai.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
