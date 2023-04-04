@@ -49,3 +49,11 @@ def test_failed_download_file_from_url():
     with pytest.raises(urllib.error.URLError):
         download_file_from_url(url, save_path, basename, extension)
     os.rmdir("./test")
+
+def test_get_basename():
+    """テスト手順
+    1. get_basename()を実行してbasenameを取得
+    2. basenameが正しいことを確認
+    """
+    filename = "test.png"
+    assert get_basename(filename) == "test"
