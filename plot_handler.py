@@ -16,6 +16,7 @@ def ablation_4_image(image1: np.ndarray,
                      save_dir: str = "./images/", save_name: str = "ablation_4_image.jpg", title: str = "Ablation Study"):
     """4つの画像を比較する
     画像は保存され，タイトルが付けられる
+    出力されるfigureの画像サイズは1280 x 960とする
 
     Args:
         image1 (numpy.ndarray): 左上
@@ -30,7 +31,7 @@ def ablation_4_image(image1: np.ndarray,
         save_name (str, optional): 保存するファイル名. Defaults to "ablation_4_image.jpg".
         title (str, optional): タイトル. Defaults to "Ablation Study".
     """
-    fig = plt.figure()
+    fig = plt.figure(figsize=(16, 12))
     fig.suptitle(title, fontsize=16)
 
     ax1 = fig.add_subplot(2, 2, 1)
