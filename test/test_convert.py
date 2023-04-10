@@ -6,6 +6,7 @@ import pytest
 import numpy as np
 import cv2
 from convert import *
+from format import TypeWarning
 
 
 def test_convert_str_to_list():
@@ -35,7 +36,7 @@ def test_convert_list_to_numpy():
     assert convert_list_to_numpy([1.0, 2.0, 3.0]).dtype == np.float64
 
     # listの要素にint, float以外のが含まれている場合場合，警告を出して変換しない
-    with pytest.warns(UserWarning):
+    with pytest.warns(TypeWarning):
         assert convert_list_to_numpy(["a", "b", "c"]) == ["a", "b", "c"]
         assert convert_list_to_numpy([1, 2.0, "c"]) == [1, 2.0, "c"]
 
@@ -48,7 +49,7 @@ def test_failed_convert_list_to_numpy():
     with pytest.raises(TypeError):
         convert_list_to_numpy(4)
 
-    with pytest.warns(UserWarning):
+    with pytest.warns(TypeWarning):
         convert_list_to_numpy("abc")
 
 
@@ -73,7 +74,7 @@ def test_convert_dict_to_json():
     assert convert_dict_to_json({"a": 1, "b": 2, "c": 3}) == '{"a": 1, "b": 2, "c": 3}'
     assert convert_dict_to_json({"a":"a", "b":3.0, "c":[1, 2, 3]}) == '{"a": "a", "b": 3.0, "c": [1, 2, 3]}'
 
-    with pytest.warns(UserWarning):
+    with pytest.warns(TypeWarning):
         convert_dict_to_json(4)
 
 def test_convert_json_to_dict():
