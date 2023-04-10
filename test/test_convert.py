@@ -4,6 +4,7 @@
 import pytest
 
 import numpy as np
+import cv2
 from convert import *
 
 
@@ -83,3 +84,20 @@ def test_convert_json_to_dict():
 
     with pytest.raises(AssertionError):
         assert json_text == {"a": 1, "b": 2, "c": 3}
+
+def test_convert_image_base64():
+    """
+    画像をbase64に変換する関数およびbase64から画像に変換する関数のテスト
+    """
+
+    # ./images/lena.jpgを読み込んでbase64に変換
+    image = cv2.imread("./images/lena.jpg")
+    image_base64 = convert_numpy_to_base64(image)
+
+    # image_base64はbinary型になる
+    assert isinstance(image_base64, bytes)
+
+    # image_base64をnumpy配列に変換
+    image_recover = convert_base64_to_numpy(image_base64)
+
+    assert isinstance(image_recover, np.ndarray)

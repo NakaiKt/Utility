@@ -1,5 +1,6 @@
 import json
 import warnings
+import base64
 
 import numpy as np
 
@@ -78,3 +79,32 @@ def convert_json_to_dict(input: str) -> dict:
         dict: 変換後の辞書
     """
     return json.loads(input)
+
+def convert_numpy_to_base64(input: np.ndarray) -> str:
+    """画像をbase64文字列に変換する関数
+
+    Args:
+        input (np.ndarray): 変換する画像
+
+    Returns:
+        str: 変換後のbase64文字列
+    """
+    # inputがnumpy配列でない場合，警告を出す
+    if not isinstance(input, np.ndarray):
+        warnings.warn(UserWarning("input is not numpy.ndarray"))
+
+    return base64.b64encode(input)
+
+def convert_base64_to_numpy(input: str) -> np.ndarray:
+    """base64文字列を画像に変換する関数
+
+    Args:
+        input (str): 変換するbase64文字列
+
+    Returns:
+        np.ndarray: 変換後の画像
+    """
+    image = base64.b64decode(input)
+    # binary の imageをnumpy配列に変換する
+    image = np.frombuffer(image, dtype=np.uint8)
+    return image
