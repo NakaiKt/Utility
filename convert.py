@@ -1,3 +1,4 @@
+import base64
 import json
 import warnings
 
@@ -78,3 +79,38 @@ def convert_json_to_dict(input: str) -> dict:
         dict: 変換後の辞書
     """
     return json.loads(input)
+
+def convert_numpy_to_base64(input: np.ndarray) -> str:
+    """画像をbase64文字列に変換する関数
+    Args:
+        input (np.ndarray): 変換する画像
+    Returns:
+        str: 変換後のbase64文字列
+    """
+    # inputがnumpy配列でない場合，TypeError
+    if not isinstance(input, np.ndarray):
+        raise TypeError(f"input is not numpy.ndarray. type: {type(input)}")
+
+    return base64.b64encode(input).decode("utf-8")
+
+
+def convert_base64_to_numpy(input: str, width: int, height: int, channel = 3) -> np.ndarray:
+    """base64文字列を画像に変換する関数
+    Args:
+        input (str): 変換するbase64文字列
+        height (int): 高さ
+        width (int): 幅
+        channel (int): カラーチャンネル数
+
+    Returns:
+        np.ndarray: 変換後の画像
+    """
+    if type(input) != str:
+        raise TypeError(f"base64 -> ndarrayの変換の入力はstrである必要があります. 入力された型{type(input)}")
+    image = base64.b64decode(input)
+    # binary の imageをnumpy配列に変換する
+    image = np.frombuffer(image, dtype=np.uint8)
+
+    # numpy配列を画像にリサイズ
+    image = image.reshape([height, width, channel])
+    return image

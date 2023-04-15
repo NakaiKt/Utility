@@ -128,3 +128,82 @@ def load_image_cv2_from_directory(directory_path = "./images/") -> np.ndarray:
     for image_path in glob.glob(directory_path + "*"):
         image = load_image_cv2(image_path)
         yield image
+
+def comp_similar_image(image1: np.ndarray, image2: np.ndarray) -> float:
+    """画像の類似度を計算する
+    類似度の最大値は1.0, 最小値は-1.0
+
+    Args:
+        image1 (numpy.ndarray): 画像1
+        image2 (numpy.ndarray): 画像2
+
+    Returns:
+        float: 類似度
+    """
+    image1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    image2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+    image1 = cv2.resize(image1, (64, 64))
+    image2 = cv2.resize(image2, (64, 64))
+    similar = cv2.matchTemplate(image1, image2, cv2.TM_CCOEFF_NORMED)[0][0]
+    return similar
+
+def comp_similar_image_from_directory(directory_path = "./images/"):
+    """
+    ディレクトリ内のすべての画像の類似度を計算する
+    
+    Args:
+        directory_path (str): ディレクトリのパス
+    """
+
+    images = []
+    for image in load_image_cv2_from_directory(directory_path):
+        images.append(image)
+
+    for i in range(len(images)):
+        for j in range(i + 1, len(images)):
+            similar = comp_similar_image(images[i], images[j])
+            print(f"image{i}とimage{j}の類似度: {similar}")
+
+def check_same_image(image1: np.ndarray, image2: np.ndarray) -> bool:
+    """画像が同じかどうかを判定する
+
+    Args:
+        image1 (numpy.ndarray): 画像1
+        image2 (numpy.ndarray): 画像2
+
+    Returns:
+        bool: 同じ画像ならTrue, 違う画像ならFalse
+    """
+    similar = comp_similar_image(image1, image2)
+    if similar > 0.99:
+        return True
+    else:
+        return False
+    
+def check_same_image_from_directory(directory_path = "./images/"):
+    """ディレクトリ内すべての画像が同じかどうかを判定する
+    手順
+    1. ディレクトリ内のすべての画像を順に読み込み，画素値の合計を計算，画像パスをキーとした辞書に格納
+    2. リストをもとに，同一画像である可能性のあるペアを列挙
+    3. check_same_imageで同一画像かどうかを判定 同一画像であった場合，その画像のパスを表示
+
+    Args:
+        directory_path (str, optional): _description_. Defaults to "./images/".
+    """
+    image_pixel_sum = {}
+    for image_path in glob.glob(directory_path + "*"):
+        image = load_image_cv2(image_path)
+        image_pixel_sum[image_path] = np.sum(image)
+
+    key_list = list(image_pixel_sum.keys())
+
+    for i, key in enumerate(key_list):
+        value = image_pixel_sum[key]
+        for j in range(i + 1, len(key_list)):
+            key2 = key_list[j]
+            value2 = image_pixel_sum[key2]
+            if value == value2:
+                # 画素値の合計が同じ場合
+                if check_same_image(load_image_cv2(key), load_image_cv2(key2)):
+                    print(f"同一画像: {key}, {key2}")
+

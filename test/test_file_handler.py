@@ -35,6 +35,29 @@ def test_download_file_from_url():
     os.remove("./test/googlelogo_color_272x92dp.png")
     os.rmdir("./test")
 
+def test_get_basename():
+    """テスト手順
+    1. get_basename()を実行してbasenameを取得
+    2. basenameが正しいことを確認
+    """
+    path = './test/google.png'
+    get_basename(path) == "google"
+
+def test_get_extension():
+    """テスト手順
+    1. get_extension()を実行してextensionを取得
+    2. extensionが正しいことを確認
+    """
+    path = './test/google.png'
+    get_extension(path) == "png"
+
+def test_get_filename():
+    """テキタウト手順
+    1. get_filename()を実行してfilenameを取変
+    2. filenameが正しいこのを確認
+    """
+    path = './test/google.png'
+    get_filename(path) == "google.png"
 
 def test_failed_download_file_from_url():
     """テスト手順
@@ -49,3 +72,27 @@ def test_failed_download_file_from_url():
     with pytest.raises(urllib.error.URLError):
         download_file_from_url(url, save_path, basename, extension)
     os.rmdir("./test")
+
+def test_load_json():
+    """テスト手順
+    1. load_json()を実行してjsonファイルを読み込む
+    2. jsonファイルの内容が正しいことを確認
+
+    test.jsonの内容
+        {
+        "name": "jquery-1.7.2.js",
+        "version": "1.7.2",
+        "description": "jQuery JavaScript Library v1.7.2",
+        "main": "jquery-1.7.2.js",
+        "directories": {
+            "example": "examples"
+        }
+    }
+    """
+    json_file = './test.json'
+    json_data = load_json(json_file)
+    assert json_data['name'] == "jquery-1.7.2.js"
+    assert json_data['version'] == "1.7.2"
+    assert json_data['description'] == "jQuery JavaScript Library v1.7.2"
+    assert json_data['main'] == "jquery-1.7.2.js"
+    assert json_data['directories']['example'] == "examples"

@@ -3,7 +3,7 @@
 
 import pytest
 
-from csv_handler import get_column
+from csv_handler import * 
 
 def test_get_column():
     # get_columnの正常テスト
@@ -15,3 +15,7 @@ def test_get_column_fault():
     # get_columnの異常テスト
     with pytest.raises(IndexError):
         get_column(key_column="key", key=3, csv_file_path="test.csv")
+
+def test_get_column_value_list():
+    # get_column_value_listの正常テスト
+    assert get_column_value_list(column_name="key", csv_file_path="test.csv") == ['1', "a", '3.0']

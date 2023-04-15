@@ -10,7 +10,6 @@ from image_handler import *
 
 def test_load_image_PIL():
     image = load_image_PIL("./images/lena.jpg")
-    print(type(image))
     assert isinstance(image, PIL.Image.Image)
 
 
@@ -54,3 +53,38 @@ def test_normalize_image_PIL():
     image = resize_image_PIL(image=image, size=(224, 224))
     image = normalize_image_PIL(image)
     assert isinstance(image, torch.Tensor)
+
+def test_comp_similar_image():
+    # ./imagesのlena, lena_2, nekoを読み込み
+    lena_image = load_image_cv2("./images/lena.jpg")
+    lena_2_image = load_image_cv2("./images/lena_2.jpg")
+    neko_image = load_image_cv2("./images/neko.jpg")
+
+    # 類似度を計算
+    lena_lena_2_similar = comp_similar_image(lena_image, lena_2_image)
+    lena_neko_similar = comp_similar_image(lena_image, neko_image)
+    lena_2_neko_similar = comp_similar_image(lena_2_image, neko_image)
+
+    assert lena_lena_2_similar > 0.99
+    assert lena_neko_similar < 0.9
+    assert lena_neko_similar == lena_2_neko_similar
+
+def test_comp_similar_image_from_directory():
+    directory_path = "./images/"
+
+    comp_similar_image_from_directory(directory_path)
+
+def test_check_similar_image_from_directory():
+    # ./imagesのlena, lena_2, nekoを読み込み
+    lena_image = load_image_cv2("./images/lena.jpg")
+    lena_2_image = load_image_cv2("./images/lena_2.jpg")
+    neko_image = load_image_cv2("./images/neko.jpg")
+
+    assert check_same_image(lena_image, lena_2_image) == True
+    assert check_same_image(lena_image, neko_image) == False
+    assert check_same_image(lena_2_image, neko_image) == False
+
+def test_check_same_image_from_directory():
+    directory_path = "./images/"
+
+    check_same_image_from_directory(directory_path)

@@ -6,12 +6,13 @@ import logging
 class HelpFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
     pass
 
-def setting_logging_config(log_name: str, log_save_path = None):
+def setting_logging_config(log_name: str, log_save_path = None, log_level = logging.DEBUG):
     """loggingの設定を行う関数
 
     Args:
         log_name (str): ログの名前
         log_save_path (str): ログの保存先
+        log_level (str): ログレベル
     """
     # もしlog_save_pathがNoneの場合は，今日の日付をファイル名にする
     if log_save_path is None:
@@ -20,7 +21,7 @@ def setting_logging_config(log_name: str, log_save_path = None):
 
     # ログの設定
     logger = logging.getLogger(log_name)
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(log_level)
     # ログのフォーマット
     formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
     # ログの出力先
