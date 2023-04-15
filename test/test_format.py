@@ -27,5 +27,8 @@ def test_setting_logging_config():
 def test_HelpFormatter():
     pass
 
+def test_TypeWarning():
+    pass
+
 if __name__ == "__main__":
     test_setting_logging_config()

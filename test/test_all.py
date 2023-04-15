@@ -1,5 +1,4 @@
-import importlib
-
+import ast
 
 # すべての関数に対してテストコードが書かれているか確認する
 def test_all():
@@ -7,11 +6,21 @@ def test_all():
     test_target = ["convert", "csv_handler", "file_handler", "format", "image_handler", "list_handler", "number_handler", "validation"]
 
     for target in test_target:
-        # テスト対象ファイルのimport
-        test_module = importlib.import_module(target)
+        with open("../" + target + ".py", encoding="utf-8", mode="r") as f:
+            tree = ast.parse(f.read())
 
         # テスト対象ファイルの関数一覧を取得
-        test_func_list = [func for func in dir(test_module) if callable(getattr(test_module, func)) and not func.startswith("__")]
+        # importで取得したクラス，関数は除く
+        func_names = []
+        import_names = []
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                import_names.append(node.names[0].name)
+            if isinstance(node, ast.ImportFrom):
+                import_names.append(node.module)
+            if isinstance(node, ast.FunctionDef):
+                func_names.append(node.name)
+        test_func_list = list(set(func_names) - set(import_names))
 
         # テスト対象ファイルの関数一覧に対してテストコードが書かれているか確認
         # テストコードは./test_ファイル名.py

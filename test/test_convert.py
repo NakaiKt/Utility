@@ -3,7 +3,8 @@
 
 import cv2
 import numpy as np
-import cv2
+import pytest
+
 from convert import *
 from format import TypeWarning
 
@@ -100,8 +101,8 @@ def test_convert_numpy_to_base64():
     assert image_recover.shape == image.shape
     assert image_recover.all() == image.all()
 
-def test_convert_base64_to_numpy():
-    pass
+# def test_convert_base64_to_numpy():
+#     pass
 
 def test_failed_convert_image_to_base64():
     """convert_numpy_to_base64でnp.array以外の入力を入れる

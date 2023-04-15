@@ -10,7 +10,7 @@ class HelpFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescript
 class TypeWarning(Warning):
     pass
 
-def setting_logging_config(log_name: str, log_save_path = None):
+def setting_logging_config(log_name: str, log_save_path = None, log_level = logging.DEBUG):
     """loggingの設定を行う関数
 
     Args:
