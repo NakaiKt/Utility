@@ -1,8 +1,11 @@
 import base64
 import json
 import warnings
+import base64
 
 import numpy as np
+
+from format import TypeWarning
 
 
 def convert_str_to_list(input: str, format="int") -> list:
@@ -35,7 +38,7 @@ def convert_list_to_numpy(input: list) -> np.ndarray:
     """
     # listの要素にint, float以外の型が含まれる場合，警告を出して変換しない
     if not all(isinstance(i, (int, float)) for i in input):
-        warnings.warn(UserWarning("list's element is not int or float"))
+        warnings.warn("list contains type other than int or float", TypeWarning)
         return input
 
     # listの要素にfloatが含まれる場合，float型のnumpy配列に変換する
@@ -66,7 +69,7 @@ def convert_dict_to_json(input: dict) -> str:
     """
     # inputがdictでない場合，警告を出す
     if not isinstance(input, dict):
-        warnings.warn(UserWarning("input is not dict"))
+        warnings.warn("input is not dict", TypeWarning)
     return json.dumps(input)
 
 def convert_json_to_dict(input: str) -> dict:

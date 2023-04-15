@@ -1,6 +1,5 @@
 import os
 from urllib import request
-import json
 
 def download_file_from_url(url: str, save_path: str, basename: str = None, extension: str = None):
     """
@@ -68,16 +67,3 @@ def get_filename(path: str):
         str: ファイルの名前
     """
     return os.path.basename(path)
-
-def load_json(file_path: str, mode: str = 'r') -> dict:
-    """
-    JSONファイルを読み込む
-
-    Args:
-        file_path (str): JSONファイルのパス
-        mode (str, optional): ファイルを開くモード. Defaults to 'r'.
-
-    Returns:
-        dict: JSONファイルの内容
-    """
-    return json.load(open(file_path, mode))

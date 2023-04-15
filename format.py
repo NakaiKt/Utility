@@ -6,7 +6,11 @@ import logging
 class HelpFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
     pass
 
-def setting_logging_config(log_name: str, log_save_path = None, log_level = logging.DEBUG):
+# 想定していた型と異なる場合の警告クラス
+class TypeWarning(Warning):
+    pass
+
+def setting_logging_config(log_name: str, log_save_path = None):
     """loggingの設定を行う関数
 
     Args:
