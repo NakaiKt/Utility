@@ -1,9 +1,10 @@
 import ast
+import os
 
 # すべての関数に対してテストコードが書かれているか確認する
 def test_all():
-    # テスト対象ファイル
-    test_target = ["convert", "csv_handler", "file_handler", "format", "image_handler", "list_handler", "number_handler", "validation"]
+    # テスト対象ファイルは../にあるすべての.pyファイル
+    test_target = [f.replace(".py", "") for f in os.listdir("../") if f.endswith(".py")]
 
     for target in test_target:
         with open("../" + target + ".py", encoding="utf-8", mode="r") as f:
