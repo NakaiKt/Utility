@@ -21,8 +21,8 @@ def test_write_yaml():
         "test_write": "test2"
     }
     # yamlファイルの内容を書き換える
-    write_yaml("test.yaml", contents)
-    assert load_yaml("test.yaml") == {
+    write_yaml("./test/test.yaml", contents)
+    assert load_yaml("test/test.yaml") == {
         "test": "test2",
         "bool": False,
         "int": 100,
@@ -36,27 +36,40 @@ def test_write_yaml():
         "bool": True,
         "test_write": None
     }
-    write_yaml("test.yaml", contents)
-    delete_content_yaml("test.yaml", ["test_write"])
+    write_yaml("./test/test.yaml", contents)
+    delete_content_yaml("./test/test.yaml", ["test_write"])
 
-    assert load_yaml("test.yaml") == {
+    assert load_yaml("./test/test.yaml") == {
         "test": "test",
         "bool": True,
         "int": 100,
         "float": 3.33,
     }
 
+def test_delete_content_yaml():
+    pass
+
+def test_load_yaml():
+    assert load_yaml("./test/test.yaml") == {
+        "test": "test",
+        "bool": True,
+        "int": 100,
+        "float": 3.33,
+    }
+
+
+
 def test_failed_load_yaml():
     with pytest.raises(FileNotFoundError):
-        load_yaml("test2.yaml")
+        load_yaml("./test/test2.yaml")
 
 def test_failed_write_yaml():
     with pytest.raises(FileNotFoundError):
-        write_yaml("test2.yaml", {"test": "test"})
+        write_yaml("./test/test2.yaml", {"test": "test"})
 
 def test_failed_delete_content_yaml():
     with pytest.raises(FileNotFoundError):
-        delete_content_yaml("test2.yaml", ["test"])
+        delete_content_yaml("./test/test2.yaml", ["test"])
     
     with pytest.raises(KeyError):
-        delete_content_yaml("test.yaml", ["test2"])
+        delete_content_yaml("./test/test.yaml", ["test2"])

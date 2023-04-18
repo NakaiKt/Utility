@@ -1,12 +1,13 @@
 import ast
+import os
 
 # すべての関数に対してテストコードが書かれているか確認する
 def test_all():
-    # テスト対象ファイル
-    test_target = ["convert", "csv_handler", "file_handler", "format", "image_handler", "list_handler", "number_handler", "validation"]
+    # テスト対象ファイルは../にあるすべての.pyファイル
+    test_target = [f.replace(".py", "") for f in os.listdir("./") if f.endswith(".py")]
 
     for target in test_target:
-        with open("../" + target + ".py", encoding="utf-8", mode="r") as f:
+        with open("./" + target + ".py", encoding="utf-8", mode="r") as f:
             tree = ast.parse(f.read())
 
         # テスト対象ファイルの関数一覧を取得
@@ -22,10 +23,13 @@ def test_all():
                 func_names.append(node.name)
         test_func_list = list(set(func_names) - set(import_names))
 
+        # test_func_listから__で始まる関数を除く
+        test_func_list = [func for func in test_func_list if not func.startswith("__")]
+
         # テスト対象ファイルの関数一覧に対してテストコードが書かれているか確認
         # テストコードは./test_ファイル名.py
         # 関数名はtest_関数名
         for func in test_func_list:
-            test_file_path = "./test_" + target + ".py"
+            test_file_path = "./test/test_" + target + ".py"
             test_func_name = "test_" + func
             assert test_func_name in open(test_file_path, encoding="utf-8", mode="r").read(), f"{test_file_path}に{test_func_name}がありません"

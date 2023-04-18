@@ -20,7 +20,7 @@ def test_load_json():
 }
     """
     # test.jsonのパス
-    test_json_path = 'test.json'
+    test_json_path = './test/test.json'
     # test.jsonの内容
     test_json_content = {
         "name": "jquery-1.7.2.js",

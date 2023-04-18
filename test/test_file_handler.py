@@ -17,7 +17,7 @@ def test_download_file_from_url():
     6. ダウンロードしたファイルを削除
     """
     url = 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
-    save_path = 'test'
+    save_path = 'test_download'
     basename = 'google'
     extension = 'jpg'
     download_file_from_url(url, save_path, basename, extension)
@@ -25,15 +25,15 @@ def test_download_file_from_url():
     get_basename("./test/google.png") == "google"
     get_extension("./test/google.png") == "jpg"
     get_filename("./test/google.png") == "google.jpg"
-    os.remove("./test/google.jpg")
-    os.rmdir("./test")
+    os.remove("./test_download/google.jpg")
+    os.rmdir("./test_download")
 
     download_file_from_url(url, save_path)
     get_basename("./test/googlelogo_color_272x92dp.png") == "googlelogo_color_272x92dp"
     get_extension("./test/googlelogo_color_272x92dp.png") == "png"
     get_filename("./test/googlelogo_color_272x92dp.png") == "googlelogo_color_272x92dp.png"
-    os.remove("./test/googlelogo_color_272x92dp.png")
-    os.rmdir("./test")
+    os.remove("./test_download/googlelogo_color_272x92dp.png")
+    os.rmdir("./test_download")
 
 def test_get_basename():
     """テスト手順
@@ -66,12 +66,12 @@ def test_failed_download_file_from_url():
     """
 
     url = 'https://sssssssfsfdsfsfsafassfsd.png'
-    save_path = 'test'
+    save_path = 'test_download'
     basename = 'google'
     extension = 'png'
     with pytest.raises(urllib.error.URLError):
         download_file_from_url(url, save_path, basename, extension)
-    os.rmdir("./test")
+    os.rmdir("./test_download")
 
 def test_load_json():
     """テスト手順
@@ -89,7 +89,7 @@ def test_load_json():
         }
     }
     """
-    json_file = './test.json'
+    json_file = './test/test.json'
     json_data = load_json(json_file)
     assert json_data['name'] == "jquery-1.7.2.js"
     assert json_data['version'] == "1.7.2"

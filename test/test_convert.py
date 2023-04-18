@@ -89,7 +89,7 @@ def test_convert_json_to_dict():
 def test_convert_numpy_to_base64():
     """画像読み込み(np.array) -> base64変換 -> np.array変換
     """
-    image = cv2.imread("./images/lena.jpg")
+    image = cv2.imread("./test/images/lena.jpg")
     image_width, image_height = image.shape[1], image.shape[0]
     image_base64 = convert_numpy_to_base64(image)
 
@@ -107,7 +107,7 @@ def test_convert_numpy_to_base64():
 def test_failed_convert_image_to_base64():
     """convert_numpy_to_base64でnp.array以外の入力を入れる
     """
-    image = cv2.imread("./images/lena.jpg")
+    image = cv2.imread("./test/images/lena.jpg")
     image_base64 = convert_numpy_to_base64(image)
 
     with pytest.raises(TypeError):
