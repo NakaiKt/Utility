@@ -57,7 +57,11 @@ def test_load_yaml():
         "float": 3.33,
     }
 
+def test_load_yaml():
+    pass
 
+def test_delete_content_yaml():
+    pass
 
 def test_failed_load_yaml():
     with pytest.raises(FileNotFoundError):
